@@ -1,0 +1,37 @@
+📝 Rapport:Analyse des Données de Santé
+Auteur :Bineta Ba
+Date : 29/04/2024
+Contexte : 
+Analyse de données médicales issues de tests de patients, avec pour objectif d’identifier les facteurs de risque de diabète
+et d’établir des recommandations de santé publique.
+   *-Chargement et Inspection des Données
+df_main.csv et df_labs.csv sont les fichiers analysés.Par rapport a la methode utilisé(voir code)
+j'ai observé que les données sont globalement bien structurées,la présence de valeurs manquantes dans les colonnes Glucose,
+Insulin, BloodPressure, etc.L'incohérences dans les champs de type date, ville et sexe et aussi les doublons partiels 
+détectés (mêmes patients avec variations mineures).
+    2. Nettoyage des Données
+-Le traitement des valeurs manquantes :
+
+On remplacement ou suppression en fonction de la criticité.C'est a dire les colonnes ou Glucose=0 on remplace par nan
+-Les valeurs physiologiquement impossibles :
+Insulin < 0, BMI = 0 → identifiées et remplacées par NaN.
+Pour la standardisation des données textuelles :(voir code)
+Pour la normalisation des dates :j'ai pas compris c'est pour cela que cette partie le code ne passe pas
+ Exploration et Visualisation
+Visualisations réalisées :
+
+Histogrammes (Glucose, BMI, Cholestérol(pour cholestérol j'ai des soucis)
+Matrice de corrélation (Heatmap Seaborn)
+Nuages de points Outcome vs variables
+. Corrélations et Analyse Statistique
+Corrélation forte avec l’Outcome :
+
+Glucose, BMI, Age
+
+Corrélations faibles ou négatives :
+
+BloodPressure
+
+Hypothèses :
+
+Un niveau élevé de glucose ou de BMI augmente significativement le risque de diabète.
